@@ -1,0 +1,79 @@
+﻿============================= test session starts =============================
+platform win32 -- Python 3.13.3, pytest-9.0.2, pluggy-1.6.0 -- C:\Users\singh\AppData\Local\Programs\Python\Python313\python.exe
+cachedir: .pytest_cache
+rootdir: C:\Users\singh\OneDrive\Desktop\FinSight\backend
+configfile: pytest.ini
+plugins: anyio-4.12.1, asyncio-1.3.0
+asyncio: mode=Mode.AUTO, debug=False, asyncio_default_fixture_loop_scope=None, asyncio_default_test_loop_scope=function
+collecting ... collected 34 items
+
+tests/test_ai_engine.py::TestForecast::test_forecast_requires_auth PASSED [  2%]
+tests/test_ai_engine.py::TestForecast::test_forecast_returns_data PASSED [  5%]
+tests/test_ai_engine.py::TestAnomalies::test_anomalies_requires_auth PASSED [  8%]
+tests/test_ai_engine.py::TestAnomalies::test_anomalies_returns_list PASSED [ 11%]
+tests/test_ai_engine.py::TestRisk::test_risk_requires_auth PASSED        [ 14%]
+tests/test_ai_engine.py::TestRisk::test_risk_score_shape PASSED          [ 17%]
+tests/test_ai_engine.py::TestRecommendations::test_recommendations_viewer_access PASSED [ 20%]
+tests/test_ai_engine.py::TestRecommendations::test_recommendations_shape PASSED [ 23%]
+tests/test_ai_engine.py::TestAssistant::test_chat_requires_auth PASSED   [ 26%]
+tests/test_ai_engine.py::TestAssistant::test_chat_returns_response PASSED [ 29%]
+tests/test_analytics.py::TestAnalyticsOverview::test_overview_requires_auth PASSED [ 32%]
+tests/test_analytics.py::TestAnalyticsOverview::test_overview_accessible_to_viewer PASSED [ 35%]
+tests/test_analytics.py::TestAnalyticsOverview::test_cashflow_monthly PASSED [ 38%]
+tests/test_analytics.py::TestAnalyticsOverview::test_cashtflow_invalid_granularity PASSED [ 41%]
+tests/test_analytics.py::TestHealthScore::test_health_score_shape PASSED [ 44%]
+tests/test_auth.py::TestLogin::test_login_valid_admin PASSED             [ 47%]
+tests/test_auth.py::TestLogin::test_login_valid_analyst PASSED           [ 50%]
+tests/test_auth.py::TestLogin::test_login_wrong_password PASSED          [ 52%]
+tests/test_auth.py::TestLogin::test_login_unknown_user PASSED            [ 55%]
+tests/test_auth.py::TestMe::test_get_me_authenticated PASSED             [ 58%]
+tests/test_auth.py::TestMe::test_get_me_unauthenticated PASSED           [ 61%]
+tests/test_auth.py::TestTokenRefresh::test_refresh_valid_token PASSED    [ 64%]
+tests/test_auth.py::TestTokenRefresh::test_refresh_invalid_token PASSED  [ 67%]
+tests/test_auth.py::TestRegister::test_register_requires_admin PASSED    [ 70%]
+tests/test_auth.py::TestRegister::test_register_weak_password PASSED     [ 73%]
+tests/test_auth.py::TestRegister::test_register_success PASSED           [ 76%]
+tests/test_auth.py::TestRegister::test_register_duplicate_email PASSED   [ 79%]
+tests/test_users.py::TestListUsers::test_admin_can_list_users PASSED     [ 82%]
+tests/test_users.py::TestListUsers::test_analyst_cannot_list_users PASSED [ 85%]
+tests/test_users.py::TestListUsers::test_viewer_cannot_list_users PASSED [ 88%]
+tests/test_users.py::TestUpdateUser::test_change_role PASSED             [ 91%]
+tests/test_users.py::TestUpdateUser::test_toggle_active PASSED           [ 94%]
+tests/test_users.py::TestDeleteUser::test_delete_user PASSED             [ 97%]
+tests/test_users.py::TestDeleteUser::test_nonexistent_user_returns_404 PASSED [100%]
+
+============================== warnings summary ===============================
+main.py:86
+  C:\Users\singh\OneDrive\Desktop\FinSight\backend\tests\..\main.py:86: DeprecationWarning: 
+          on_event is deprecated, use lifespan event handlers instead.
+  
+          Read more about it in the
+          [FastAPI docs for Lifespan Events](https://fastapi.tiangolo.com/advanced/events/).
+          
+    @app.on_event("startup")
+
+..\..\..\..\AppData\Local\Programs\Python\Python313\Lib\site-packages\fastapi\applications.py:4573
+  C:\Users\singh\AppData\Local\Programs\Python\Python313\Lib\site-packages\fastapi\applications.py:4573: DeprecationWarning: 
+          on_event is deprecated, use lifespan event handlers instead.
+  
+          Read more about it in the
+          [FastAPI docs for Lifespan Events](https://fastapi.tiangolo.com/advanced/events/).
+          
+    return self.router.on_event(event_type)
+
+tests/test_ai_engine.py: 6 warnings
+tests/test_analytics.py: 4 warnings
+tests/test_auth.py: 9 warnings
+tests/test_users.py: 7 warnings
+  C:\Users\singh\OneDrive\Desktop\FinSight\backend\tests\..\auth.py:73: DeprecationWarning: datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+    expire = datetime.utcnow() + (expires_delta or timedelta(minutes=ACCESS_TOKEN_EXPIRE_MINUTES))
+
+tests/test_ai_engine.py: 6 warnings
+tests/test_analytics.py: 4 warnings
+tests/test_auth.py: 9 warnings
+tests/test_users.py: 7 warnings
+  C:\Users\singh\OneDrive\Desktop\FinSight\backend\tests\..\auth.py:80: DeprecationWarning: datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+    expire = datetime.utcnow() + timedelta(days=REFRESH_TOKEN_EXPIRE_DAYS)
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+====================== 34 passed, 54 warnings in 12.13s =======================
