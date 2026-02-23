@@ -290,4 +290,4 @@ MIT License — see [LICENSE](LICENSE) for details.
 
 ---
 
-<p align="center">Built with ❤️ by <strong>Niraj Singh</strong></p>
+<p align="center">Built with ❤️ by <strong>Ranvijay Singh</strong></p>
